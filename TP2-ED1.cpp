@@ -7,7 +7,7 @@ using namespace std;
 struct data {
     int dia;
     int mes;
-    int ano;	
+    int ano;
 };
 
 struct contato {
@@ -28,7 +28,7 @@ int main() {
     contato contatos[5];
 
     for (int i = 0; i < 5; i++) {
-        cout << "\nCadastro do Contato " << (i + 1) << endl;
+        cout << "\nCadastro do Contato " << (i + 1) << ":\n";
 
         cout << "Nome: ";
         getline(cin, contatos[i].nome);
@@ -42,22 +42,24 @@ int main() {
         cout << "Dia de nascimento: ";
         cin >> contatos[i].dtnasc.dia;
 
-        cout << "Mês de nascimento: ";
+        cout << "Mes de nascimento: ";
         cin >> contatos[i].dtnasc.mes;
 
         cout << "Ano de nascimento: ";
         cin >> contatos[i].dtnasc.ano;
-        cin.ignore(); // limpa o \n do buffer
+
+        cin.ignore(); 
     }
 
-    cout << "\n--- Lista de Contatos ---" << endl;
+    cout << "\n---- Lista de Contatos ----\n";
     for (int i = 0; i < 5; i++) {
         cout << "Nome: " << contatos[i].nome << endl;
         cout << "Email: " << contatos[i].email << endl;
         cout << "Telefone: " << contatos[i].telefone << endl;
         cout << "Idade: " << calcularIdade(contatos[i].dtnasc) << " anos" << endl;
-        cout << "-----------------------------" << endl;
+        cout << "----------------------------\n";
     }
 
+    system("pause"); 
     return 0;
 }
